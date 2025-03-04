@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-02-24T01:38:53 IST" name="MySuite" finished-at="2025-02-24T01:38:55 IST" duration-ms="2309">
+    <groups>
+    </groups>
+    <test started-at="2025-02-24T01:38:53 IST" name="MyTests" finished-at="2025-02-24T01:38:55 IST" duration-ms="2309">
+      <class name="com.aryan.DatabaseConnectionTest">
+        <test-method signature="testDatabaseConnection()[pri:0, instance:com.aryan.DatabaseConnectionTest@a9cd3b1]" started-at="2025-02-24T01:38:53 IST" name="testDatabaseConnection" finished-at="2025-02-24T01:38:53 IST" duration-ms="481" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDatabaseConnection -->
+      </class> <!-- com.aryan.DatabaseConnectionTest -->
+      <class name="com.aryan.LoginServletTest">
+        <test-method signature="testLoginSuccess()[pri:0, instance:com.aryan.LoginServletTest@63355449]" started-at="2025-02-24T01:38:55 IST" name="testLoginSuccess" finished-at="2025-02-24T01:38:55 IST" duration-ms="163" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginSuccess -->
+      </class> <!-- com.aryan.LoginServletTest -->
+      <class name="com.aryan.SignupServletTest">
+        <test-method signature="testSignup()[pri:0, instance:com.aryan.SignupServletTest@7e0b85f9]" started-at="2025-02-24T01:38:53 IST" name="testSignup" finished-at="2025-02-24T01:38:55 IST" duration-ms="1628" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSignup -->
+      </class> <!-- com.aryan.SignupServletTest -->
+    </test> <!-- MyTests -->
+  </suite> <!-- MySuite -->
+</testng-results>

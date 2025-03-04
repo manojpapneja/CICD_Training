@@ -1,32 +1,30 @@
 pipeline {
     agent any
     environment {
-        MAVEN_HOME = '/usr/local/opt/maven/libexec'  // Update this path
-        PATH = "${MAVEN_HOME}/bin:${env.PATH}"
+        MAVEN_HOME = 'C:\\Program Files\\maven\\apache-maven-3.9.9'  // Update this path for Windows Maven installation
+        PATH = "${MAVEN_HOME}\\bin;${env.PATH}"
     }
     stages {
         stage('Checkout') {
             steps {
                 // Clone the repository
-                git branch: 'main', url: 'https://github.com/Aryan-402/Deployment_project.git'
+                git branch: 'main', url: 'https://github.com/manojpapneja/CICD_Training.git'
+        
             }
         }
         stage('Build') {
             steps {
                 // Use Maven to package the project
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
         stage('Deploy') {
             steps {
-                // Deploy to Tomcat server
-                sh '''
-                cp target/UserAuthWeb-1.0-SNAPSHOT.war /Applications/apache-tomcat-9.0.95/webapps
-                '''
-                // Start Tomcat server (no need to shut it down first)
-                sh '''
-                /Applications/apache-tomcat-9.0.95/bin/startup.sh
-                '''
+                // Deploy to Tomcat server (update with correct Tomcat path for Windows)
+                bat 'xcopy target\\UserAuthWeb-1.0-SNAPSHOT.war C:\\Program Files\\apache-tomcat-9.0.98\\webapps'
+                
+                // Start Tomcat server on Windows (ensure Tomcat is set up properly)
+                bat 'C:\\Program Files\\apache-tomcat-9.0.98\\bin\\startup.bat'                
             }
         }
         stage('Send Email') {
@@ -36,14 +34,14 @@ pipeline {
                     emailext(
                         subject: 'Deployment Report',
                         body: '''
-                            Hi Team, Please find the attached emailable-report for details of the deployment.
+                            Hi Team, Please find the attached emailable report for details of the deployment.
                             Regards,
                             Jenkins
                         ''',
                         attachLog: true,
-                        attachmentsPattern: '**/target/surefire-reports/emailable-report.html',
-                        to: 'aryanbhaskar003@gmail.com',
-                        from: 'jenkinsreport@stabforge.com'
+                        attachmentsPattern: '**\\target\\surefire-reports\\emailable-report.html',
+                        to: 'manojpapneja@gmail.com',
+                        from: 'jenkinsreport@gmail.com'
                     )
                 }
             }

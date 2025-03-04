@@ -19,7 +19,7 @@ public class LoginSteps {
     public void iAmOnTheLoginPage() {
         System.setProperty("webdriver.chrome.driver", "/Applications/chromedriver-mac-x64/chromedriver");
         driver = new ChromeDriver();
-        driver.get("http://localhost:2306/Deployment_project/login.jsp");
+        driver.get("http://localhost:8081/UserAuthWeb/login.jsp");
     }
 
     @When("I enter {string} as username and {string} as password")

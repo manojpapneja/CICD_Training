@@ -19,7 +19,7 @@ public class SignupSteps {
         System.setProperty("webdriver.chrome.driver", "/Applications/chromedriver-mac-x64/chromedriver");
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.get("http://localhost:8081/signup.jsp");
+        driver.get("http://localhost:8081/UserAuthWeb/signup.jsp");
     }
 
     @When("I enter {string} as username")

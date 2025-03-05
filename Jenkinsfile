@@ -1,7 +1,8 @@
 pipeline {
     agent any
     environment {
-        MAVEN_HOME = 'C:\\Program Files\\maven\\apache-maven-3.9.9'  // Update this path for Windows Maven installation
+        //MAVEN_HOME = 'C:\\Program Files\\maven\\apache-maven-3.9.9'  // Update this path for Windows Maven installation on personal laptop
+        MAVEN_HOME = 'E:\\apache-maven-3.8.8'  // Update this path for Windows Maven installation on Office laptop
         PATH = "${MAVEN_HOME}\\bin;${env.PATH}"
     }
     stages {
@@ -22,8 +23,8 @@ pipeline {
     steps {
         script {
             // Set Tomcat path - Update if Tomcat is installed in a different location
-            def TOMCAT_HOME = 'C:\\Program Files\\apache-tomcat-9.0.98'
-
+            // def TOMCAT_HOME = 'C:\\Program Files\\apache-tomcat-9.0.98' // Update this path for Windows Maven installation on personal laptop
+             def TOMCAT_HOME = 'C:\\Projects\\Smart_Recorder\\apache-tomcat-10.1.16'  // Update this path for Windows Maven installation on Office laptop
             // Ensure the target WAR file exists before copying
             bat """
                 if exist target\\UserAuthWeb-1.0-SNAPSHOT.war (

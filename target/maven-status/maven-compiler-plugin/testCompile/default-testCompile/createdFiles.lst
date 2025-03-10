@@ -1,0 +1,6 @@
+stepDefinitions\LoginSteps.class
+com\aryan\SignupServletTest.class
+com\aryan\LoginServletTest.class
+com\aryan\DatabaseConnectionTest.class
+runners\TestRunner.class
+stepDefinitions\SignupSteps.class
